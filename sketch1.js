@@ -126,3 +126,16 @@ function aplicarRepulsionDiferentes(a, vecinos) {
     }
   }
 }
+//MACARENA
+//espacio personal entre articulos para que no se pisen
+function aplicarSeparacion(a, vecinos) {
+  for (let v of vecinos) {
+    let d = dist(a.x, a.y, v.x, v.y);
+    if (d > 0 && d < radioSeparacion) {
+      let empujex = (a.x - v.x) / d;
+      let empujey = (a.y - v.y) / d;
+      a.vx += empujex * fuerzaSeparacion;
+      a.vy += empujey * fuerzaSeparacion;
+    }
+  }
+}
