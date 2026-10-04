@@ -110,3 +110,19 @@ function aplicarAtraccionIguales(a, vecinos) {
     a.vy += (promy - a.y) * fuerzaAtraccionIguales * 0.1;
   }
 }
+//EDUARDO
+//alejar a los que son de diferente color
+function aplicarRepulsionDiferentes(a, vecinos) {
+  for (let v of vecinos) {
+    //comprueba si el vecino es distinto
+    if (v.tipo != a.tipo) {
+      let d = dist(a.x, a.y, v.x, v.y);
+      if (d > 0) {
+        let empujex = (a.x - v.x) / d;
+        let empujey = (a.y - v.y) / d;
+        a.vx += empujex * fuerzaRepulsionDiferentes;
+        a.vy += empujey * fuerzaRepulsionDiferentes;
+      }
+    }
+  }
+}

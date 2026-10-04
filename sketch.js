@@ -1,4 +1,5 @@
 //RENATA
+
 let agentes = [];
 let cantidad = 60; // 30 rojos y 30 azules
 
