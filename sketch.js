@@ -110,7 +110,6 @@ function aplicarAtraccionIguales(a, vecinos) {
     a.vy += (promy - a.y) * fuerzaAtraccionIguales * 0.1;
   }
 }
-
 //EDUARDO
 //alejar a los que son de diferente color
 function aplicarRepulsionDiferentes(a, vecinos) {
@@ -142,7 +141,7 @@ function aplicarSeparacion(a, vecinos) {
   }
 }
 
-//ANTONIA
+//ANTONIa
 //alinea el movimiento con los del mismo tipo
 function aplicarAlineacion(a, vecinos) {
   let sumvx = 0;
@@ -165,6 +164,7 @@ function aplicarAlineacion(a, vecinos) {
     a.vy += (promvy - a.vy) * fuerzaAlineacion;
   }
 }
+
 
 //si dos agentes son vecinos
 function esVecino(a, b, r) {
