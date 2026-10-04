@@ -139,3 +139,26 @@ function aplicarSeparacion(a, vecinos) {
     }
   }
 }
+//ANTONIA
+//alinea el movimiento con los del mismo tipo
+function aplicarAlineacion(a, vecinos) {
+  let sumvx = 0;
+  let sumvy = 0;
+  let contador = 0;
+
+  for (let v of vecinos) {
+    //si es de los vecinos para copiar su velocidad
+    if (v.tipo == a.tipo) {
+      sumvx += v.vx;
+      sumvy += v.vy;
+      contador++;
+    }
+  }
+
+  if (contador > 0) {
+    let promvx = sumvx / contador;
+    let promvy = sumvy / contador;
+    a.vx += (promvx - a.vx) * fuerzaAlineacion;
+    a.vy += (promvy - a.vy) * fuerzaAlineacion;
+  }
+}
